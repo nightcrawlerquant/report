@@ -1,0 +1,46 @@
+{
+  "filename": "live_demo.html",
+  "symbol": "DEMO",
+  "timeframe": "1s",
+  "fee_rate": 0.0,
+  "mode": "live",
+  "summary": {
+    "net_profit": 0.25,
+    "win_rate": null,
+    "max_drawdown_percent": null,
+    "sharpe_ratio": null,
+    "profit_loss_ratio": null
+  },
+  "pnl_events": [
+    [
+      1788270600000,
+      -3.3
+    ],
+    [
+      1788271800000,
+      -2.85
+    ],
+    [
+      1788280800000,
+      6.4
+    ]
+  ],
+  "metric_cards": [
+    {
+      "label": "账本已实现盈亏",
+      "value": "+0.25 USDT",
+      "subtitle": "合成数据，已扣实际手续费",
+      "tone": "gain"
+    },
+    {
+      "label": "当前库存",
+      "value": "1 DEMO",
+      "subtitle": "由业务系统提供"
+    },
+    {
+      "label": "单笔盈亏",
+      "value": "未提供",
+      "subtitle": "不推算开平配对和未知统计"
+    }
+  ]
+}

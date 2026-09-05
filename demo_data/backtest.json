@@ -1,0 +1,8 @@
+{
+  "filename": "backtest_demo.html",
+  "symbol": "DEMO",
+  "timeframe": "1s",
+  "fee_rate": 0.0002,
+  "initial_capital": 10000,
+  "mode": "backtest"
+}

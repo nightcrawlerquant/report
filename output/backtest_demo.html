@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DEMO 回测报告</title>
+  <link rel="stylesheet" href="static/backtest-report.css">
+</head>
+<body>
+  <main id="report" class="report-shell">
+    <header class="report-header">
+      <div><h1 id="report-title"></h1><p id="report-subtitle"></p></div>
+      <div class="report-actions">
+        <label>开始<input id="range-start" type="date"></label>
+        <label>结束<input id="range-end" type="date"></label>
+        <button id="apply-range" type="button">应用</button>
+        <button id="refresh-report" type="button">刷新</button>
+        <button id="export-orders" type="button" class="primary">导出</button>
+      </div>
+    </header>
+    <section id="metrics" class="metric-grid" aria-label="核心指标"></section>
+    <section class="panel equity-panel">
+      <div class="equity-heading"><div><h2>权益与回撤</h2><p>净收益曲线 · 水下回撤 · 最多 100 个采样点</p></div><span id="equity-summary"></span></div>
+      <div id="equity-chart" role="img" aria-label="权益与回撤曲线"></div>
+    </section>
+    <section class="panel chart-panel">
+      <div class="chart-toolbar">
+        <strong>技术指标</strong>
+        <label class="marker-scheme-control">行情周期
+          <select id="kline-timeframe"><option value="1" selected>1min</option><option value="5">5min</option><option value="30">30min</option><option value="60">1h</option></select>
+        </label>
+        <label class="marker-scheme-control">交易标记
+          <select id="marker-scheme"><option value="bubble" selected>方案1 · 气泡</option><option value="triangle">方案2 · 三角</option></select>
+        </label>
+        <div id="indicator-list" class="indicator-list"></div>
+        <select id="indicator-type" aria-label="指标类型"><option>EMA</option><option>MA</option><option>MACD</option></select>
+        <button id="add-indicator" type="button">+ 添加</button>
+      </div>
+      <div id="kline-chart" role="img" aria-label="K线回测图表"></div>
+    </section>
+    <section class="panel order-panel">
+      <div class="section-heading">
+        <div><h2>委托记录</h2><p id="order-count"></p></div>
+        <label class="filter-switch"><input id="hide-cancelled" type="checkbox" checked><span>屏蔽撤单</span></label>
+      </div>
+      <div id="order-table" class="order-viewport" role="table" aria-label="委托记录"></div>
+    </section>
+    <aside class="performance-note"><strong>性能优化</strong><span id="performance-status"></span></aside>
+  </main>
+  <div id="report-error" class="report-error" hidden></div>
+  <script src="static/echarts.min.js"></script>
+  <script src="backtest_demo.data/config.js"></script>
+  <script defer src="static/backtest-report.js"></script>
+</body>
+</html>
